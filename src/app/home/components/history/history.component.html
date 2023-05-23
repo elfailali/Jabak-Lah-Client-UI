@@ -1,0 +1,21 @@
+<!-- transaction-history.component.html -->
+<div class="transaction-history-container">
+    <h3>Transaction History</h3>
+    <table class="transaction-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.id }}</td>
+          <td>{{ transaction.amount | currency: 'USD' }}</td>
+          <td>{{ transaction.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
