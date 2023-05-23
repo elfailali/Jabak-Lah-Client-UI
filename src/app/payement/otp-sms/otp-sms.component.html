@@ -1,0 +1,15 @@
+<div class="otp-sms">
+    <h3>OTP Verification</h3>
+    <p>Please enter the Message sent to {{ phoneNumber }}</p>
+  
+    <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <!-- <label for="otp">OTP:</label> -->
+        <input type="text" id="otp" formControlName="otp" class="form-control">
+      </div>
+  
+      <button id="btn
+" type="submit" [disabled]="!otpForm.valid" class="btn btn-primary">Confirm Payment</button>
+    </form>
+  </div>
+  

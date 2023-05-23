@@ -1,0 +1,37 @@
+<body>
+    <section  class="ml-auto col-3 left-side">
+
+        <!-- Compte -->
+        <a routerLink="/account">
+                <div class="menu-element">
+                    <fa-icon icon="user-circle"></fa-icon>
+                    <span>Compte</span>
+                </div>
+
+        </a>
+
+        <!-- Payment -->
+        <a routerLink="/payment">
+            <div class="menu-element">
+                <fa-icon icon="exchange-alt"></fa-icon>
+                <span>Paiment et Recharge</span>
+            </div>
+        </a>
+    
+        <!-- Settings -->
+        <a routerLink="/settings">
+            <div class="menu-element">
+                <fa-icon icon="cog"></fa-icon>
+                <span>Parametres</span>
+            </div>
+        </a>
+            
+        
+    </section>
+    
+    <section class="col-10 right-side" >
+        <app-amount class="amount"></app-amount>
+        <app-history></app-history>
+    </section>
+    
+</body>

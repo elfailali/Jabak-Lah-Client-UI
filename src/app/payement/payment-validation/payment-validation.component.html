@@ -1,0 +1,32 @@
+<div>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Récapitulation</h4>
+    <!-- <button type="button" class="btn-close " aria-label="Close" (click)="modal.dismiss('Cross click')"></button> -->
+  </div>
+  <div class="modal-body">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td class="title">N° de téléphone :</td>
+          <td>{{phone}}</td>
+        </tr>
+        <tr>
+          <td class="title">Le Type :</td>
+          <td>{{creancierCode}}</td>
+        </tr>
+        <tr>
+          <td class="title">Le Montant :</td>
+          <td>{{amount}}</td>
+        </tr>
+        <tr>
+          <td class="title">La date :</td>
+          <td>{{date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" >Annuler</button>
+    <button type="button" class="btn btn-outline-dark" >Valider</button>
+  </div>
+</div>

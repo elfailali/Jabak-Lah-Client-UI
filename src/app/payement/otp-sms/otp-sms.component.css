@@ -1,0 +1,45 @@
+.otp-sms {
+    background-color: #F8F8F8;
+    padding: 20px;
+    border-radius: 5px;
+    /* display: flex;
+    flex-direction: column; */
+    text-align: center;
+    width:fit-content ;
+  }
+  
+  .otp-sms h3 {
+    color: #6415FF;
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  
+  .otp-sms p {
+    color: #212529;
+    margin-bottom: 20px;
+  }
+  
+  .otp-sms .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .otp-sms label {
+    color: #212529;
+    font-weight: bold;
+  }
+  
+  .otp-sms .btn-primary {
+    font-weight: 700;
+    font-size: 14px;
+    background-color: #6415FF;
+    color: #F8F8F8;
+    border-radius: 10px;
+  }
+
+
+.btn-primary:disabled {
+  background-color: #D9D9D9;
+  cursor: not-allowed;
+  border-color: #212529;
+}

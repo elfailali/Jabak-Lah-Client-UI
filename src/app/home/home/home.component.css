@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+}
+
+.left-side{
+    /* background-color: #181C2E; */
+}
+
+.menu-element:hover{
+    color: #673DE6;
+    background-color: #F8F8F8  ;
+    border: #673DE6 solid;
+}
+
+.menu-element{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    margin: 1rem;
+    padding: 1rem 1rem 1rem 1rem ;
+    background-color: #673DE6;
+    color: #F8F8F8;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+fa-icon{
+    /* color: #181C2E; */
+    /* background-color: #F8F8F8; */
+    /* border-radius: 10px; */
+    font-size: 3rem;
+}
+
+/* AMOUNT COMPONENT */
+

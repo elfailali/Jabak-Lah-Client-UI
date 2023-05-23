@@ -1,0 +1,13 @@
+.bill-type-selection {
+    background-color: #F8F8F8;
+    padding: 20px;
+  }
+  
+  .bill-type-selection h2 {
+    color: #212529;
+  }
+  
+  .bill-type-selection button {
+    margin: 5px;
+  }
+  

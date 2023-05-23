@@ -1,0 +1,70 @@
+
+/* CATEGORIES FILTERS */
+.custom-select {
+    display: block;
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .custom-select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+
+
+/* CRIDITORS */
+.creditors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.creditor-card {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px; 
+
+    /* ADD SHADDOW */
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .creditor-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border:  1px solid #ccc;
+    margin-right: 10px;
+    align-items: center;
+  }
+  
+  .creditor-card h3 {
+    margin-bottom: 5px;
+  }
+  
+  .creditor-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .creditor-card li {
+    margin-bottom: 3px;
+  }
+  
