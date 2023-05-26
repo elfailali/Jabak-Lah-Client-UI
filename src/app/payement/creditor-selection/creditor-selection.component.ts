@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 interface Creditor {
   id: number;
@@ -19,7 +21,6 @@ export class CreditorSelectionComponent implements OnInit {
 
   selectedCreditor: Creditor | null = null;
 
-  constructor() { }
 
   ngOnInit(): void {
     this.getCreditors();
@@ -41,6 +42,30 @@ export class CreditorSelectionComponent implements OnInit {
         billTypes: ['Bill Type 4', 'Bill Type 5']
       },
       {
+        id: 2,
+        image: './../../assets/logos/maroc-telecom-blanc-ar-grande.jpg',
+        title: 'Creditor 2',
+        billTypes: ['Bill Type 4', 'Bill Type 5']
+      },
+      {
+        id: 2,
+        image: './../../assets/logos/maroc-telecom-blanc-ar-grande.jpg',
+        title: 'Creditor 2',
+        billTypes: ['Bill Type 4', 'Bill Type 5']
+      },
+      {
+        id: 2,
+        image: './../../assets/logos/maroc-telecom-blanc-ar-grande.jpg',
+        title: 'Creditor 2',
+        billTypes: ['Bill Type 4', 'Bill Type 5']
+      },
+      {
+        id: 2,
+        image: './../../assets/logos/maroc-telecom-blanc-ar-grande.jpg',
+        title: 'Creditor 2',
+        billTypes: ['Bill Type 4', 'Bill Type 5']
+      },
+      {
         id: 3,
         image: 'https://picsum.photos/200',
         title: 'Creditor 3',
@@ -49,7 +74,12 @@ export class CreditorSelectionComponent implements OnInit {
     ];
   }
 
+  constructor(private router: Router) { }
+
   onSelectCreditor(creditor: Creditor): void {
     this.selectedCreditor = creditor;
+    
+    this.router.navigate([`/recharge/${creditor.id}`])
+    // this.route.navigate([`liste-creance/${title}`])
   }
 }

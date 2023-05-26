@@ -1,24 +1,28 @@
-<h2>Creditor Selection</h2>
+<div class="my-4 shadow-lg p-sm-5  mx-sm-4  rounded-5">
 
-<!-- ADD CATEGORIES FILTER -->
-<select class="custom-select" >
-    <option selected>Tous les categories</option>
-    <option value="facture">Facture</option>
-    <option value="recharge">Recharge</option>
-    <option value="donation">Donation</option>
-</select>
+  <h3 class="">Liste des créanciers</h3>
 
-<div class="creditors">
-    <div *ngFor="let creditor of creditors" (click)="onSelectCreditor(creditor)" class="creditor-card">
-        <img [src]="creditor.image" alt="Creditor Image">
-        <div >
-          <h3>{{ creditor.title }}</h3>
-          <ul>
-            <li *ngFor="let billType of creditor.billTypes">{{ billType }}</li>
-          </ul>
+  <!-- ADD CATEGORIES FILTER -->
+  <select class="custom-select" >
+      <option selected>Tous les categories</option>
+      <option value="facture">Facture</option>
+      <option value="recharge">Recharge</option>
+      <option value="donation">Donation</option>
+  </select>
+
+  <div class="creditors">
+      <div *ngFor="let creditor of creditors" (click)="onSelectCreditor(creditor)" class="creditor-card">
+          <img class="creditor-image" [src]="creditor.image" alt="Creditor Image">
+          <div >
+            <h3>{{ creditor.title }}</h3>
+            <ul>
+              <li *ngFor="let billType of creditor.billTypes">{{ billType }}</li>
+            </ul>
+          </div>
         </div>
-      </div>
+  </div>
 </div>
+
 
 
 <div *ngIf="selectedCreditor">

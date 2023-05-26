@@ -1,6 +1,6 @@
-<div>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Récapitulation</h4>
+<div class="container shadow rounded">
+  <div class="modal-header mb-3 border-bottom border-1 pb-3 my-2">
+    <h4 class="modal-title ">Récapitulation</h4>
     <!-- <button type="button" class="btn-close " aria-label="Close" (click)="modal.dismiss('Cross click')"></button> -->
   </div>
   <div class="modal-body">
@@ -26,7 +26,7 @@
     </table>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" >Annuler</button>
-    <button type="button" class="btn btn-outline-dark" >Valider</button>
+    <button routerLink="/" type="button" class="btn btn-outline-dark annuler" >Annuler</button>
+    <button routerLink="/otp-sms" type="button" class="btn btn-outline-dark" >Valider</button>
   </div>
 </div>

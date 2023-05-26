@@ -1,7 +1,12 @@
 /* CSS for the recap.component.css */
 
+.container{
+  margin-top: 3rem;
+}
+
+
 .modal-header {
-  background-color: #F8F8F8;
+  /* background-color: #F8F8F8; */
   padding: 10px;
   display: flex;
   align-items: center;
@@ -35,7 +40,7 @@
 }
 
 .modal-footer {
-  background-color: #F8F8F8;
+  /* background-color: #F8F8F8; */
   padding: 10px;
   display: flex;
   justify-content: flex-end;
@@ -59,4 +64,9 @@
 .btn-outline-dark:hover {
   background-color: #212529;
   color: #F8F8F8;
+}
+
+.annuler{
+  background-color: #FF46A4;
+  font-weight: 400s;
 }
