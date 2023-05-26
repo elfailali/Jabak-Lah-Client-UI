@@ -8,6 +8,10 @@ import { UnpaidBillsComponent } from './unpaid-bills/unpaid-bills.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OtpSmsComponent } from './otp-sms/otp-sms.component';
 import { RechargeComponent } from './recharge/recharge.component';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
+
 
 
 
@@ -24,7 +28,9 @@ import { RechargeComponent } from './recharge/recharge.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterOutlet,
+    RouterModule
   ],
   exports: [
     PaymentValidationComponent,
@@ -32,7 +38,8 @@ import { RechargeComponent } from './recharge/recharge.component';
     PaymentListComponent,
     BillTypeSelectionComponent,
     OtpSmsComponent,
-    RechargeComponent
+    RechargeComponent,
+    
   ]
 })
 export class PayementModule { }

@@ -10,12 +10,14 @@ import { HomeModule } from './home/home.module';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome'
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
+import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NoPageFoundedComponent
   ],
   imports: [
     BrowserModule,

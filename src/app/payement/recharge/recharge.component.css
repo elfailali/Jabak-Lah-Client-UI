@@ -1,0 +1,17 @@
+.suivant{
+    background-color: #673DE6;
+    border: #ccc;
+    border: 1px solid black;
+
+}
+
+.retour{
+    background-color: #FF46A4;
+    border: 1px solid black;
+
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    color: #F8F8F8;
+}
