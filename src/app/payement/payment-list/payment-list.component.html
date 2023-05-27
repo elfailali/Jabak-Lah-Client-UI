@@ -1,16 +1,18 @@
 <h1>Payment List</h1>
 
-<table>
+<table class="container">
   <thead>
     <tr>
       <th>Payment ID</th>
+      <th>Creditor</th>
       <th>Amount</th>
       <th>Date</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let payment of payments">
-      <td>{{ payment.id }}</td>
+      <td>{{ payment.transactionId }}</td>
+      <td>{{ payment.creditor }}</td>
       <td>{{ payment.amount }}</td>
       <td>{{ payment.date }}</td>
     </tr>

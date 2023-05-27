@@ -1,0 +1,9 @@
+button{
+    background-color: #6415FF;
+    /* border: 1px solid #181C2E; */
+    border: none;
+    margin-left: 1rem;
+}
+.annuler{
+    background-color: #E22B27;
+}

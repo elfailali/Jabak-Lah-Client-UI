@@ -39,7 +39,6 @@ import { RouterModule } from '@angular/router';
     BillTypeSelectionComponent,
     OtpSmsComponent,
     RechargeComponent,
-    
   ]
 })
 export class PayementModule { }

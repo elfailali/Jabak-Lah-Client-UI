@@ -11,6 +11,8 @@ import { HomeModule } from './home/home.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome'
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.component';
+import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -26,6 +28,8 @@ import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.compon
     PayementModule,
     HomeModule,
     FontAwesomeModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
