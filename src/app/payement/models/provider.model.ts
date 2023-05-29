@@ -6,9 +6,14 @@ export class Provider {
     category: string;
     surname: string;
     rechargeTypes?: RechargeType[] = [
-      new RechargeType(1, 'SMS *1'),
-      new RechargeType(2, 'Call Mobile *2'),
-      new RechargeType(3, 'Data Card *3'),
+      new RechargeType(1, 'NORMAL RECHARGE'),
+      new RechargeType(1, 'PASS JAWAL SMS *1'),
+      new RechargeType(1, 'Call Mobile *2'),
+      new RechargeType(1, 'PASS JAWAL INTERNET *3'),
+      new RechargeType(1, 'PASS JAWAL *5'),
+      new RechargeType(2, 'PASS MT TALK *6'),
+      new RechargeType(3, 'PASS SERVICES PREMIUMS *9'),
+
     ];
     creancierCode?: number;
   

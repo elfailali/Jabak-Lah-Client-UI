@@ -1,13 +1,13 @@
 .suivant{
     background-color: #673DE6;
     border: #ccc;
-    border: 1px solid black;
+    border: none
 
 }
 
 .retour{
     background-color: #FF46A4;
-    border: 1px solid black;
+    border: none;
 
 }
 

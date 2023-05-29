@@ -6,16 +6,20 @@ import { RechargeComponent } from './payement/recharge/recharge.component';
 import { PaymentValidationComponent } from './payement/payment-validation/payment-validation.component';
 import { OtpSmsComponent } from './payement/otp-sms/otp-sms.component';
 import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.component';
+import { LoginComponent } from './auth/login/login.component';
+import { ChangePassWordComponent } from './auth/change-pass-word/change-pass-word.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  // {path: '/home', component: HomeComponent},
+  {path: '', component: LoginComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'account', component: HomeComponent}, //
   {path: 'payment', component: CreditorSelectionComponent},
   {path: 'settings', component: HomeComponent}, //
   {path: 'recharge/:id-creancier', component: RechargeComponent},
   {path: 'validation', component: PaymentValidationComponent},
   {path: 'otp-sms', component: OtpSmsComponent},
+  {path: 'change-password',component: ChangePassWordComponent},
   {path: '**', component: NoPageFoundedComponent}
 ];
 

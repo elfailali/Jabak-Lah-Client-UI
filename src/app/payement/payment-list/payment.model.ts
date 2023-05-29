@@ -1,5 +1,6 @@
 export interface Payment {
-    id: number;
+    transactionId: number;
+    creditor: string;
     amount: number;
     date: string;
   }

@@ -7,23 +7,39 @@ import { PaymentService } from './payment.service';
   templateUrl: './payment-list.component.html',
   styleUrls: ['./payment-list.component.css']
 })
-export class PaymentListComponent {
+export class PaymentListComponent implements OnInit{
 
   payments: Payment[]  = [
-    { id: 1, amount: 100, date: '2022-01-01' },
-    { id: 2, amount: 200, date: '2022-01-02' },
-    { id: 3, amount: 300, date: '2022-01-03' }
+    { transactionId: 1, creditor:'IAM', amount: 100, date: '2022-01-01'},
+    { transactionId: 2, creditor:'IAM', amount: 200, date: '2022-01-02'},
+    { transactionId: 3, creditor:'Inwi', amount: 300, date: '2022-01-03'}
   ];
 
   constructor(private paymentService: PaymentService) {
     // this.payments = paymentService.getPayments();
   }
 
-  addPayment(payment: Payment): void {
-    this.paymentService.addPayment(payment);
+  ngOnInit(): void {
+      this.loadTransactions();
   }
 
-  deletePayment(payment: Payment): void {
-    this.paymentService.deletePayment(payment);
-  }
+  loadTransactions(): void {
+    const accountId = 1; // Provide the account ID here
+    this.paymentService.getSucceedTransactions(accountId).subscribe(
+      (data) => {
+        this.payments = data;
+      },
+      (error) => {
+        console.log('Error:', error);
+      }
+    );
+  }
+
+  // addPayment(payment: Payment): void {
+  //   this.paymentService.addPayment(payment);
+  // }
+
+  // deletePayment(payment: Payment): void {
+  //   this.paymentService.deletePayment(payment);
+  // }
 }

@@ -20,9 +20,9 @@ export class HistoryComponent implements OnInit{
     // Simulate API call to fetch the transaction history
     setTimeout(() => {
       this.transactions = [
-        { id: 1, amount: 100, date: '2022-01-01' },
-        { id: 2, amount: 200, date: '2022-01-02' },
-        { id: 3, amount: 300, date: '2022-01-03' }
+        { id: 1, creditor: "IAM", amount: 100, date: '2022-01-01' },
+        { id: 2, creditor: "IAM", amount: 200, date: '2022-01-02' },
+        { id: 3, creditor: "IAM", amount: 300, date: '2022-01-03' }
       ]; // Set the transaction history to sample data
     }, 2000); // 2s wait
   }

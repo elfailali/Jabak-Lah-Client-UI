@@ -1,10 +1,13 @@
+<app-payment-list></app-payment-list>
+
 <!-- transaction-history.component.html -->
-<div class="transaction-history-container">
+<!-- <div class="transaction-history-container">
     <h3>Transaction History</h3>
     <table class="transaction-table">
       <thead>
         <tr>
           <th>ID</th>
+          <th>Creditor</th>
           <th>Amount</th>
           <th>Date</th>
         </tr>
@@ -12,10 +15,11 @@
       <tbody>
         <tr *ngFor="let transaction of transactions">
           <td>{{ transaction.id }}</td>
-          <td>{{ transaction.amount | currency: 'USD' }}</td>
+          <td>{{ transaction.cridetor }}</td>
+          <td>{{ transaction.amount | currency: 'DH' }}</td>
           <td>{{ transaction.date }}</td>
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
   
