@@ -1,9 +1,11 @@
-.container{
+.cnt{
   /* max-width:80%; */
+  margin-right: 4rem;
 }
 
-h1 {
-    color: #333;
+h3 {
+  margin-left: 6px;
+    color:  #6415FF;;
   }
   
   table {

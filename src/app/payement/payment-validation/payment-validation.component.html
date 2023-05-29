@@ -1,32 +1,32 @@
 <div class="container shadow rounded">
   <div class="modal-header mb-3 border-bottom border-1 pb-3 my-2">
-    <h4 class="modal-title ">Récapitulation</h4>
+    <h4 class="modal-title ">Recapitulation</h4>
     <!-- <button type="button" class="btn-close " aria-label="Close" (click)="modal.dismiss('Cross click')"></button> -->
   </div>
   <div class="modal-body">
     <table class="table table-hover">
       <tbody>
         <tr>
-          <td class="title">N° de téléphone :</td>
+          <td class="title">Number to recharge :</td>
           <td>{{phone}}</td>
         </tr>
         <tr>
-          <td class="title">Le Type :</td>
+          <td class="title">Type :</td>
           <td>{{creancierCode}}</td>
         </tr>
         <tr>
-          <td class="title">Le Montant :</td>
+          <td class="title">Amount :</td>
           <td>{{amount}}</td>
         </tr>
         <tr>
-          <td class="title">La date :</td>
-          <td>{{date}}</td>
+          <td class="title">Date :</td>
+          <td>{{date | date:'yyyy-MM-dd'}}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="modal-footer">
-    <button routerLink="/" type="button" class="btn btn-outline-dark annuler" >Annuler</button>
-    <button routerLink="/otp-sms" (click)="sendVerificationCode()" type="button" class="btn btn-outline-dark" >Valider</button>
+    <button routerLink="/recharge/:id-creancier" type="button" class="btn btn-outline-dark annuler" >Cancel</button>
+    <button routerLink="/otp-sms" (click)="sendVerificationCode()" type="button" class="btn btn-outline-dark" >Validate</button>
   </div>
 </div>
