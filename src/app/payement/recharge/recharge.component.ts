@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Provider } from '../models/provider.model';
 import { SharedDataService } from '../shared-data.service';
+import { Creditor } from '../creditor-selection/creditor-selection.component';
 
 
 @Component({
@@ -10,14 +11,17 @@ import { SharedDataService } from '../shared-data.service';
   styleUrls: ['./recharge.component.css']
 })
 export class RechargeComponent implements OnInit {
-  provider?: Provider = new Provider(
+  selectedCreditor?: Creditor | null = null;
+
+  provider = new Provider(
     4,
+    '',
     'IAM',
-    './../../assets/logos/maroc-telecom-blanc-ar-grande.jpg',
     'Recharge',
     'Maroc Telecom'
   );
 
+  // data from client:
   phone?: string;
   creancierCode?: string;
   amount?: string;
@@ -31,6 +35,38 @@ export class RechargeComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private sharedDataService: SharedDataService) {}
 
   ngOnInit(): void {
+    // get the logo and name
+    this.sharedDataService.selectedCreditorData$.subscribe(creditor => {
+      this.selectedCreditor = creditor;
+    });
+
+    // redefine a provider
+    this.provider.image = this.selectedCreditor?.image ?? '';
+    this.provider.code = this.selectedCreditor?.id ?? 0;
+    this.provider.name = this.selectedCreditor?.title ?? '';
+
+    // SAVE DATA AFTER REFRESHING PAGE:
+    // store the selected cridetor
+    if (this.selectedCreditor) {
+      localStorage.setItem('selectedCreditorImage', this.selectedCreditor.image);
+      localStorage.setItem('selectedCreditorName', this.selectedCreditor.title);
+      localStorage.setItem('selectedCreditorId', this.selectedCreditor.id.toString());
+
+    }
+
+    // Retrieve selected creditor data from localStorage
+    const storedCreditorId = localStorage.getItem('selectedCreditorId');
+    const storedCreditorImage = localStorage.getItem('selectedCreditorImage');
+    const storedCreditorName = localStorage.getItem('selectedCreditorName');
+
+    // Update provider with stored data
+    this.provider.code = storedCreditorId ? parseInt(storedCreditorId, 10) : 0;
+    this.provider.image = storedCreditorImage || '';
+    this.provider.name = storedCreditorName || '';
+
+
+
+// Get data from user
     this.rechargeForm = this.formBuilder.group({
       phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       creancierCode: ['', Validators.required],

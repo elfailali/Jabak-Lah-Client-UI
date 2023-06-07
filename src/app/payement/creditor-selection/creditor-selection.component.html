@@ -1,31 +1,33 @@
-<div class="container p-4 my-4 shadow-lg   rounded-5">
+<div class="container p-4 my-4 shadow-lg rounded-5">
+  <h3 class="title">List of creditors</h3>
 
-  <h3 class="" >List of creditors</h3>
+  <!-- Add categories filter -->
+  <!-- Add categories filter -->
+<select class="custom-select" (change)="onCategoryFilter($event)">
+  <option value="">All categories</option>
+  <option value="Bill">Bill</option>
+  <option value="Recharge">Recharge</option>
+  <option value="Donation">Donation</option>
+</select>
 
-  <!-- ADD CATEGORIES FILTER -->
-  <select class="custom-select" >
-      <option selected>All categories</option>
-      <option value="facture">Bill</option>
-      <option value="recharge">Recharge</option>
-      <option value="donation">Donation</option>
-  </select>
+  <!-- if no cridetors in the list -->
+  <div class="no-creditor-msg" *ngIf="filteredCreditors.length<=0">No Creditors Exist for {{category}}!</div>
 
   <div class="creditors" style="justify-content: space-between;">
-      <div *ngFor="let creditor of creditors" (click)="onSelectCreditor(creditor)" class="creditor-card">
-        <div class="creditor-image">
-          <img class="imgCre" [src]="creditor.image" alt="Creditor Image">
-        </div>
-          <div >
-            <h3>{{ creditor.title }}</h3>
-            <ul>
-              <li *ngFor="let billType of creditor.billTypes">{{ billType }}</li>
-            </ul>
-          </div>
-        </div>
+    <div *ngFor="let creditor of filteredCreditors" (click)="onSelectCreditor(creditor)" class="creditor-card">
+      <div class="creditor-image">
+        <img class="imgCre" [src]="creditor.image" alt="Creditor Image">
+      </div>
+      <div class="text">
+        <h3>{{ creditor.title }}</h3>
+        <ul>
+          <li *ngFor="let billType of creditor.billTypes">{{ billType }}</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>
-
-
 
 <div *ngIf="selectedCreditor">
   <h3>Selected Creditor: {{ selectedCreditor.title }}</h3>
