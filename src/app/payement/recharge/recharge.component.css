@@ -1,3 +1,20 @@
+h3{
+    color: #6415FF;
+}
+
+.provider-img{
+    height:auto; 
+    max-width: 200px;
+}
+.provider-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    
+}
+
 .suivant{
     background-color: #673DE6;
     border: #ccc;
