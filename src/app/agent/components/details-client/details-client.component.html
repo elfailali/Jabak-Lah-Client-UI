@@ -29,12 +29,30 @@
                             <button type="submit"  class="btn btn-block py-2 botton " 
                             >Add payment account</button>
                         </div> -->
-                        <select class="form-select" aria-label="Default select example">
+                        <!-- <select class="form-select" aria-label="Default select example">
                             <option selected>Select account payment limit</option>
                             <option value="1">Hssab 1 - Plafond : 200 DH</option>
                             <option value="2">Hssab 1 - Plafond : 5 000 DH</option>
                             <option value="3">Hssab 1 - Plafond : 20 000 DH</option>
-                          </select>
+                        </select> -->
+                        <form>
+                            <div class="form-group">
+                              <label for="clientId">Client ID:</label>
+                              <input type="text" class="form-control" id="id" [(ngModel)]="id">
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="paymentLimit">Select account payment limit:</label>
+                              <select class="form-select" aria-label="Default select example" id="paymentLimit" [(ngModel)]="selectedPaymentLimit">
+                                <option selected>Select account payment limit</option>
+                                <option value="200">Hssab 1 - Plafond : 200 DH</option>
+                                <option value="5000">Hssab 1 - Plafond : 5 000 DH</option>
+                                <option value="20000">Hssab 1 - Plafond : 20 000 DH</option>
+                              </select>
+                            </div>
+                          
+                            <button type="button" class="btn btn-primary" (click)="updatePaymentLimit()">Update Payment Limit</button>
+                          </form>
 
                         
                         

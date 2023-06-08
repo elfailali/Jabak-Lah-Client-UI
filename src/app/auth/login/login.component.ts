@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import jwtDecode from 'jwt-decode';
 import { ClientToken } from 'src/app/models/ClientToken';
 import { UserService } from 'src/app/services/user.service';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-login',
@@ -13,8 +15,13 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent implements OnInit{
   constructor(
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private cookieService: CookieService
   ) {}
+
+  navigateToChangePassword(token: string) {
+    this.router.navigate(['/change-password'], { queryParams: { token } });
+  }
 
   ngOnInit(): void {}
 
@@ -30,9 +37,16 @@ export class LoginComponent implements OnInit{
         document.cookie = `${'Authorization'}=${encodeURIComponent('Bearer '+response.access_token)}; ${expires}; path=/`;
 
         console.log(decodedToken.role);
+        console.log(decodedToken.isFirstLogin);
+
+
         
-        if (decodedToken.role === 'CLIENT') {
-          this.router.navigate(['/agent/dash']);
+        if (decodedToken.role === 'CLIENT' && decodedToken.isFirstLogin === true) {
+          this.router.navigate(['/change-password']);
+          
+
+        } else if (decodedToken.role === 'CLIENT' && decodedToken.isFirstLogin === false) {
+          this.router.navigate(['/home']);
         } else {
           this.router.navigate(['/login']);
         }

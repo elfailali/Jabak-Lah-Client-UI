@@ -1,57 +1,74 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-// import { AlertService } from 'src/app/shared/services/alert.service';
-// import { AuthService } from '../../services/auth.service';
-// import { TokenStorageService } from '../../services/token-storage.service';
+import { FormControl, FormGroup, Validators,NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
+import { ClientToken } from 'src/app/models/ClientToken';
+import { UserService } from 'src/app/services/user.service';
+import { CookieService } from 'ngx-cookie-service';
+
+
+
 @Component({
   selector: 'app-change-pass-word',
   templateUrl: './change-pass-word.component.html',
   styleUrls: ['./change-pass-word.component.css']
 })
-export class ChangePassWordComponent {
+export class ChangePassWordComponent implements OnInit{
+
+  
+
 
   loading = false;
   submitted = false;
+
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private cookieService: CookieService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(){
+    const token = this.cookieService.get('token');
+    this.route.queryParams.subscribe(params => {
+      const token = params['token'];
+      // Use the token as needed in the component
+    });
+
+  }
 
 
   changePasswordForm = new FormGroup({
     password: new FormControl('', Validators.required)
   });
 
-  onSubmit(){
+  onSubmit(changePswForm : NgForm) {
+    this.userService.changePswFirstTime(changePswForm.value).subscribe(
+      (response :any) => {
+        const decodedToken = jwtDecode<ClientToken>(response.access_token);
 
+        // decodedToken.isFirstLogin = false;
+        
+        const expirationDate = new Date();
+        expirationDate.setTime(expirationDate.getTime() +  24 * 60 * 60 * 1000);
+        const expires = `expires=${expirationDate.toUTCString()}`;
+        document.cookie = `${'Authorization'}=${encodeURIComponent('Bearer '+response.access_token)}; ${expires}; path=/`;
+
+        console.log(decodedToken.isFirstLogin);
+        
+        if (decodedToken.isFirstLogin === false) {
+          this.router.navigate(['/login']);
+          
+        } else {
+          this.router.navigate(['/change-password']);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-
-  // constructor(private alertService: AlertService, private authService: AuthService, private router: Router, private tokenStorage: TokenStorageService) { }
-
-  // ngOnInit(): void {
-  // }
-  // onSubmit() {
-  //   this.submitted = true;
-  //   this.alertService.clear();
-  //   if (this.changePasswordForm.invalid) {
-  //     return;
-  //   }
-  //   this.loading = true;
-  //   console.log(typeof (this.changePasswordForm.value));
-  //   this.authService.changePassword(this.changePasswordForm.value).subscribe({
-  //     next: (v: any) => {
-  //       this.alertService.success(v);
-  //       this.tokenStorage.setIsFirstLogin('false');
-  //       this.loading = false;
-  //     },
-  //     error: (e: any) => {
-  //       this.alertService.error(e.statusText);
-  //       this.loading = false;
-  //     },
-  //     complete: () => {
-  //       this.alertService.success("Votre mot de passe a été changé avec succé");
-  //       this.router.navigate([''])
-  //     }
-  //   })
-
-  // }
+  
 
   get f() { return this.changePasswordForm.controls; }
 

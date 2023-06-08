@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IClient } from '../../models/IClient';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../../services/client.service';
+import { BankService } from '../../services/bank.service';
 
 @Component({
   selector: 'app-details-client',
@@ -10,19 +11,24 @@ import { ClientService } from '../../services/client.service';
 })
 export class DetailsClientComponent implements OnInit {
 
-  isActive: boolean = false;
 
-  toggleDropDown() {
-    this.isActive = !this.isActive;
-  }
+  
 
+
+  
   public loading: boolean =false;
   public id: string | null = null;
   public client:IClient = {} as IClient;
   public errorMessage : string | null = null;
 
+  // clientId: string;
+  public selectedPaymentLimit: number = 0;
+
   
-  constructor(private activatedRoute : ActivatedRoute, private clientService : ClientService){
+  constructor(
+    private activatedRoute : ActivatedRoute, 
+    private clientService : ClientService,
+    private bankService: BankService){
 
   }
 
@@ -42,6 +48,26 @@ export class DetailsClientComponent implements OnInit {
     }
 
    
+    
+  }
+
+  updatePaymentLimit(): void {
+    this.activatedRoute.paramMap.subscribe((param)=>{
+      this.id =param.get('id');
+    });
+    if(this.id){                  
+      this.bankService.updatePaymentLimit(this.id, this.selectedPaymentLimit)
+      .subscribe(
+        response => {
+          console.log('Payment limit updated successfully');
+          // Gérer la réponse du backend si nécessaire
+        },
+        error => {
+          console.error('Error updating payment limit:', error);
+          // Gérer les erreurs de la requête si nécessaire
+        }
+      );
+    }
     
   }
 
