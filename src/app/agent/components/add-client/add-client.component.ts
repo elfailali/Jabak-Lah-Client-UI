@@ -26,7 +26,7 @@ export class AddClientComponent implements OnInit {
   createSubmit(){
     this.clientService.createClient(this.client).subscribe((data : any)=>{
       console.log(data);
-      // this.router.navigate([`/agent/dash/list`]).then();
+      this.router.navigate([`/agent/dash/list`]).then();
     }, (error) => {
       this.errorMessage=error;
       this.router.navigate(['/agent/dash/client/add']).then();
