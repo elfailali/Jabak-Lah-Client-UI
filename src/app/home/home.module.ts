@@ -6,7 +6,6 @@ import { HomeComponent } from './home/home.component';
 import { faFilm, faUserCircle,faExchangeAlt,faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from '../app-routing.module';
-import { HeaderComponent } from '../shared/header/header.component';
 import { PaymentListComponent } from '../payement/payment-list/payment-list.component';
 import { PayementModule } from '../payement/payement.module';
 
@@ -26,7 +25,8 @@ import { PayementModule } from '../payement/payement.module';
     CommonModule,
     FontAwesomeModule,
     AppRoutingModule,
-    PayementModule
+    PayementModule,
+    
   ],
   exports: [
     AmountComponent,

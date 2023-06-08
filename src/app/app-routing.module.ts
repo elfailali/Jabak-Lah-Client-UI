@@ -8,9 +8,12 @@ import { OtpSmsComponent } from './payement/otp-sms/otp-sms.component';
 import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ChangePassWordComponent } from './auth/change-pass-word/change-pass-word.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: FirstPageComponent},
+  { path: 'agent', loadChildren: () => import('./agent/agent.module').then(m => m.AgentModule) },
+  
   {path: 'login', component:LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'account', component: HomeComponent}, //

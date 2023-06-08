@@ -24,13 +24,15 @@ import { RouterModule } from '@angular/router';
     BillTypeSelectionComponent,
     UnpaidBillsComponent,
     OtpSmsComponent,
-    RechargeComponent
+    RechargeComponent,
+    
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterOutlet,
-    RouterModule
+    RouterModule,
+    
   ],
   exports: [
     PaymentValidationComponent,
