@@ -48,17 +48,17 @@
                                              </div>
  
                                              <div class="row g-2 mb-4">
-                                                 <!-- <div class="form-floating col-md-6 ">
+                                                 <div class="form-floating col-md-6 ">
                                                      <select placeholder="" class="form-select" aria-label="Default select example" required="true"
                                                          style="border-radius:20px; background-color:#F8F8F8;">
                                                          <option value="Cin">Cin</option>
                                                          <option value="Passport">Passport</option> 
                                                      </select>
                                                      <label class='Montserrat' style="color:#242846">Piece d'identité *</label>
-                                                 </div>  -->
+                                                 </div> 
 
                                                  <div class="form-floating col-md-6">
-                                                    <input type='date' class='form-control' 
+                                                    <input type='date' class='form-control' [(ngModel)]="client.birthDate" name="birthDate" 
                                                     placeholder='Date de naissance' style="border-radius:20px; background-color:#F8F8F8;"/>
                                                     <label class='Montserrat' style="color:#242846">Date de naissance *</label>
                                                     </div>
@@ -74,7 +74,7 @@
                                              </div>
                                              <div class="row g-2 mb-4">
                                                 <div class="form-floating col-md-6">
-                                                    <input  type='number' [(ngModel)]="client.phoneNumber" name="phoneNumber" class='form-control' 
+                                                    <input  type='text' [(ngModel)]="client.phoneNumber" name="phoneNumber" class='form-control' 
                                                     placeholder='Numéro de téléphone' style="border-radius:20px; background-color:#F8F8F8;" required="true"/>
                                                     <label class='Montserrat' style="color:#242846">Phone number *</label>
                                                     </div>

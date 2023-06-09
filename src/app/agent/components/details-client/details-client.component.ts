@@ -56,18 +56,19 @@ export class DetailsClientComponent implements OnInit {
       this.id =param.get('id');
       console.log(this.id);
     });
-    if(this.id){                  
+    if (this.id && this.selectedPaymentLimit) {
       this.bankService.updatePaymentLimit(this.id, this.selectedPaymentLimit)
-      .subscribe(
-        response => {
-          console.log('Payment limit updated successfully');
-          // Gérer la réponse du backend si nécessaire
-        },
-        error => {
-          console.error('Error updating payment limit:', error);
-          // Gérer les erreurs de la requête si nécessaire
-        }
-      );
+        .subscribe(
+          response => {
+            console.log(response)
+            console.log('Payment limit updated successfully');
+            // Gérer la réponse du backend si nécessaire
+          },
+          error => {
+            console.error('Error updating payment limit:', error);
+            // Gérer les erreurs de la requête si nécessaire
+          }
+        );
     }
     
   }
