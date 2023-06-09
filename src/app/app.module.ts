@@ -13,23 +13,30 @@ import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.compon
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedDataService } from './payement/shared-data.service';
+import { TransactionPassedComponent } from './payement/transaction-passed/transaction-passed.component';
+import { ProductListComponent } from './store/product-list/product-list.component';
+import { StoreModule } from './store/store.module';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoPageFoundedComponent
+    NoPageFoundedComponent,
+    // TransactionPassedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AuthModule,
     PayementModule,
     HomeModule,
     FontAwesomeModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule
   ],
   providers: [SharedDataService],
   bootstrap: [AppComponent]

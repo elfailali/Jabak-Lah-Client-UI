@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AmountComponent } from './components/amount/amount.component';
 import { HistoryComponent } from './components/history/history.component';
 import { HomeComponent } from './home/home.component';
-import { faFilm, faUserCircle,faExchangeAlt,faCog } from '@fortawesome/free-solid-svg-icons';
+import { faFilm, faUserCircle,faExchangeAlt,faCog, faMoneyCheckAlt, faHistory } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from '../app-routing.module';
 import { HeaderComponent } from '../shared/header/header.component';
@@ -38,6 +38,6 @@ import { PayementModule } from '../payement/payement.module';
 })
 export class HomeModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faFilm,faUserCircle,faExchangeAlt,faCog);
+    library.addIcons(faFilm,faUserCircle,faExchangeAlt,faCog, faMoneyCheckAlt, faHistory);
   }
  }

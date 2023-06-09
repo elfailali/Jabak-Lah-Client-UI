@@ -1,0 +1,21 @@
+<div class="container p-4 my-4 shadow-lg rounded-5">
+    <h2>Product List</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let product of products">
+        <div class="card" (click)="onSelectProduct(product)">
+          <img class="card-img-top" src="{{ product.image }}" alt="Product Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.itemName }}</h5>
+            <p class="card-text">
+              <span class="text-muted">Price:</span> {{ product.price | currency : ' MAD '}}
+            </p>
+            <!-- <p class="card-text">
+              <span class="text-muted">Quantity:</span> {{ product.quantity }}
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  

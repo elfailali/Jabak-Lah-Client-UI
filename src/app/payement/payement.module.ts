@@ -11,9 +11,9 @@ import { RechargeComponent } from './recharge/recharge.component';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
-
-
-
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { TransactionPassedComponent } from './transaction-passed/transaction-passed.component';
 
 
 @NgModule({
@@ -24,13 +24,15 @@ import { RouterModule } from '@angular/router';
     BillTypeSelectionComponent,
     UnpaidBillsComponent,
     OtpSmsComponent,
-    RechargeComponent
+    RechargeComponent,
+    TransactionPassedComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterOutlet,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule,
   ],
   exports: [
     PaymentValidationComponent,
@@ -39,6 +41,11 @@ import { RouterModule } from '@angular/router';
     BillTypeSelectionComponent,
     OtpSmsComponent,
     RechargeComponent,
+    TransactionPassedComponent
   ]
 })
-export class PayementModule { }
+export class PayementModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faSpinner);
+  }
+ }

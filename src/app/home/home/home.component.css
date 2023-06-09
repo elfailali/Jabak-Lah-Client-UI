@@ -20,7 +20,7 @@ body {
     align-items: center;
     gap: 1rem;
 
-    margin: 1rem;
+    margin: 1rem 1rem;
     padding: 1rem 1rem 1rem 1rem ;
     background-color: #673DE6;
     color: #F8F8F8;
@@ -39,5 +39,15 @@ fa-icon{
     font-size: 3rem;
 }
 
-/* AMOUNT COMPONENT */
+@media (max-width:900px){
+    .menu-element{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    /* .menu-element{
+        background-color: red;
+    } */
 
+}
