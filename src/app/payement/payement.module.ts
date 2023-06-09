@@ -25,14 +25,18 @@ import { TransactionPassedComponent } from './transaction-passed/transaction-pas
     UnpaidBillsComponent,
     OtpSmsComponent,
     RechargeComponent,
+
     TransactionPassedComponent
+
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterOutlet,
     RouterModule,
+
     FontAwesomeModule,
+
   ],
   exports: [
     PaymentValidationComponent,

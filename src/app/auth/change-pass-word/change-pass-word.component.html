@@ -1,19 +1,26 @@
+<div class="m-0 p-0 row backChangePsw" style="height:100vh; ">
+  
 <div class="container mt-5 pt-5">
+
+  <div class="col-md-12  mb-5" style=" display: flex; justify-content: center; align-items: center; ">
+    <img src="assets/svg/LogoV2.svg" height="90px">
+  </div>
+
     <div class="card col-12 col-sm-7 col-md-6 m-auto shadow rounded-4">
       <div class="card-body">
         <h4 class="my-2">Change Password</h4>
         
-        <form  (ngSubmit)="onSubmit()" class="bg-white p-3">
+        <form #changePswForm="ngForm" (ngSubmit)="onSubmit(changePswForm)" class="bg-white p-3">
           <div class="mb-3">
-            <label for="password" class="form-label">New Password</label>
-            <input type="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
-            <label for="password" class="form-label">Confirm the new Password</label>
-            <input type="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+            <label for="phoneNumber" class="form-label">Full number</label>
+            <input type="text"  ngModel name="phoneNumber" id="phoneNumber" class="form-control" >
+            <label for="password" class="form-label">Write your new Password</label>
+            <input type="password"  ngModel name="newPassword" id="newPassword" class="form-control">
           </div>
   
           <div class="form-group d-flex justify-content-end mt-3">
-            <button class="btn btn-secondary annuler ">Undo</button>
-            <button routerLink="/" class="btn btn-primary ">Save</button>
+            <!-- <button class="btn btn-secondary annuler ">Undo</button> -->
+            <button routerLink="/" type='submit' class="btn btn-primary ">Save</button>
             
 
 
@@ -23,4 +30,5 @@
   
     </div>
   </div>
+</div>
   

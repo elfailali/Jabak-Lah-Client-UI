@@ -10,13 +10,18 @@ import { HomeModule } from './home/home.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome'
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.component';
-import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedDataService } from './payement/shared-data.service';
+
 import { TransactionPassedComponent } from './payement/transaction-passed/transaction-passed.component';
 import { ProductListComponent } from './store/product-list/product-list.component';
 import { StoreModule } from './store/store.module';
 import { FormsModule } from '@angular/forms';
+
+import { AgentModule } from './agent/agent.module';
+import { HeaderComponent } from './shared/header/header.component';
+import { SharedModule } from './shared/shared.module';
+
 
 
 
@@ -25,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     NoPageFoundedComponent,
     // TransactionPassedComponent
+
   ],
   imports: [
     BrowserModule,
@@ -34,9 +40,11 @@ import { FormsModule } from '@angular/forms';
     PayementModule,
     HomeModule,
     FontAwesomeModule,
+    HttpClientModule,
     SharedModule,
     HttpClientModule,
     StoreModule
+    AgentModule,
   ],
   providers: [SharedDataService],
   bootstrap: [AppComponent]

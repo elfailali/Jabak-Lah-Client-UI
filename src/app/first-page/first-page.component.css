@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.background-image{
+    background-image: url('../../assets/firstPage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+.cardLogo{
+    border-radius:29.5px 29.5px 0px 0px ;
+    background-color: #181c2e ;
+    color: #000;
+    width: 358px;
+    height: 178px;
+    border: 2px dashed #6415ff;    
+
+
+}
+.cardLogin{
+    border-radius:29.5px ;
+    background-color: #fff ;
+    color: #000;
+    width: 358px;
+    height: 178px;
+    transform: translateY(-30px);
+    
+
+
+}
+
+.inpt{
+    border-radius: 12.5px;
+    background-color: #fff
+    
+   
+}
+
+.botton {
+background-color: #6415ff;
+width: 100%;
+color: #fff;
+border-radius:12.5px ;
+}
+
+.form-check-input {
+    border-radius: 3px;
+}
+
+.form-check-input:checked {
+    background-color: #6415ff;
+    border-color: #6415ff;
+    border-radius: 3px;
+}
+
+@media (min-width: 576px) { 
+    .divGaucheLogin {
+        display: none;
+      }
+      
+ }

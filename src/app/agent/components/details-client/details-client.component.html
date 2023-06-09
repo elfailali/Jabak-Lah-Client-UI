@@ -1,0 +1,93 @@
+ <!-- Loading spinner -->
+ <div *ngIf="loading">
+    <spinner></spinner>
+</div>
+
+<!-- Error message -->
+<div *ngIf="!loading && errorMessage">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!loading && isNotEmpty()" class=" div m-0 p-0 detailsClientScroll scrollbar scrollbar-indigo bordered-indigo" style="position: relative; height: 78vh; background-color:#fff; border-radius: 12px; ">
+    
+                 <div class=" border-0  p-3  " style="background-color:#6415FF; height: 85px;border-radius: 12px 12px 0px 0px; display: flex; justify-content: end;" > 
+                    <div type="button" routerLink="/agent/dash/list"><i class="fa-solid fa-xmark fa-2xl" style="color: #fff; "></i></div>    
+                </div>
+                <div class="row d-flex" style="justify-content: space-between; ">
+                    <div class="col-md-4" style=" transform: translateY(-50px); background-color: '' ;  margin-left: 30px;">
+                        <img class="mb-2"  src="assets/svg/avatarJabakV3.svg" height="100px">
+                        <h4 class="MontserratB">{{client.firstName}} {{client.lastName}}</h4>
+                    </div>
+                    <div class="col-md-6 d-flex p-4" style=" transform: translateY(-50px); background-color: '' ; margin-left: 30px; align-items: end; justify-content: end;">
+                        <!-- <div class=' text-center MontserratB'>
+                            <button type="submit"  class="btn btn-block py-2 botton " 
+                            >Add payment account</button>
+                        </div> -->
+                        <!-- <select class="form-select" aria-label="Default select example">
+                            <option selected>Select account payment limit</option>
+                            <option value="1">Hssab 1 - Plafond : 200 DH</option>
+                            <option value="2">Hssab 1 - Plafond : 5 000 DH</option>
+                            <option value="3">Hssab 1 - Plafond : 20 000 DH</option>
+                        </select> -->
+                        <form>
+                            <!-- <div class="form-group">
+                              <label for="clientId">Client ID:</label>
+                              <input type="text" class="form-control" id="id" [(ngModel)]="id">
+                            </div> -->
+                          
+                            <div class="form-group my-4">
+                              <label class=" my-2" for="paymentLimit">Select account payment limit:</label>
+                              <select class="form-select" aria-label="Default select example" id="paymentLimit" [(ngModel)]="selectedPaymentLimit">
+                                <option selected>Select account payment limit</option>
+                                <option value="200">Hssab 1 - Plafond : 200 DH</option>
+                                <option value="5000">Hssab 1 - Plafond : 5 000 DH</option>
+                                <option value="20000">Hssab 1 - Plafond : 20 000 DH</option>
+                              </select>
+                            </div>
+                          
+                            <button type="button" class="btn btn-primary" (click)="updatePaymentLimit()">Update Payment Limit</button>
+                          </form>
+
+                        
+                        
+                          
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="div px-4 pt-4 pb-4"  style="transform: translateY(-50px); background-color:''; height: 60vh; ">
+                    <div class=" p-4" style="background-color:#f8f8f8;border-radius: 12px;">
+                        <dl class="row">
+                            <dt class="col-sm-4 Lato" style="color:#6415FF;">CIN</dt>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.cin}}</dd>
+
+                            <dt class="col-sm-4 Lato" style="color:#6415FF;">Birthday</dt>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>21/06/1997</dd>
+
+                            <dt class="col-sm-4 Lato" style="color:#6415FF;">Address</dt>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.address}}</dd>
+
+                            <dt class="col-sm-4 Lato" style="color:#6415FF;">Email</dt>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.email}}</dd>
+
+                            <dt class="col-sm-4 Lato" style="color:#6415FF;">Phone</dt>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.phoneNumber}}</dd>
+
+                            <!-- <dt class="col-sm-4 Lato" style="color:#6415FF;">Commercial Register Number </dt>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.CommercialRn}}</dd>
+
+                            <dt class="col-sm-4 Lato" style="color:#6415FF;">Patent Number</dt>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.patentNumber}}</dd> -->
+                        </dl>
+                    </div>
+                </div>
+          
+     
+ </div>
