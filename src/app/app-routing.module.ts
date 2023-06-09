@@ -8,7 +8,13 @@ import { OtpSmsComponent } from './payement/otp-sms/otp-sms.component';
 import { NoPageFoundedComponent } from './no-page-founded/no-page-founded.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ChangePassWordComponent } from './auth/change-pass-word/change-pass-word.component';
+
+import { TransactionPassedComponent } from './payement/transaction-passed/transaction-passed.component';
+import { ProductListComponent } from './store/product-list/product-list.component';
+import { ProductComponent } from './store/product/product.component';
+
 import { FirstPageComponent } from './first-page/first-page.component';
+
 
 const routes: Routes = [
   {path: '', component: FirstPageComponent},
@@ -22,8 +28,18 @@ const routes: Routes = [
   {path: 'recharge/:id-creancier', component: RechargeComponent},
   {path: 'validation', component: PaymentValidationComponent},
   {path: 'otp-sms', component: OtpSmsComponent},
+  {path: 'transaction-passed', component: TransactionPassedComponent},
   {path: 'change-password',component: ChangePassWordComponent},
-  {path: '**', component: NoPageFoundedComponent}
+  {path: 'product-list', component: ProductListComponent},
+  {path: 'product-details/:productNumber', component: ProductComponent},
+
+
+
+  {path: '**', component: NoPageFoundedComponent},
+
+ 
+
+
 ];
 
 @NgModule({

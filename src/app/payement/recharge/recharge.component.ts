@@ -76,12 +76,14 @@ export class RechargeComponent implements OnInit {
     console.log(this.amount)
   }
 
+  get f() {
+    return this.rechargeForm.controls;
+  }
+
   onSubmit(): void {
     this.submitted = true;
-    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhh')
 
     if (this.rechargeForm.invalid) {
-      console.log('sorti mr')
       return;
     }
 
@@ -92,16 +94,12 @@ export class RechargeComponent implements OnInit {
 
     console.log(this.amount)
 
-    // Store the data in the shared service
+    // Store the data in the shared service to display it in the Validation section
     this.sharedDataService.setRechargeData({
       phoneNumber: this.phone,
       creancierCode: this.creancierCode,
       amount: this.amount
     });
 
-
-
-    // Perform further actions or submit the form data
-    // ...
   }
 }

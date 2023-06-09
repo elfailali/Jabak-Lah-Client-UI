@@ -14,11 +14,12 @@ export class SharedDataService {
 
   constructor() {}
 
+  // example data = {phoneNumber: '0624425227', creancierCode: '2', amount: '20'}
   setRechargeData(data: any): void {
     this.rechargeDataSubject.next(data);
   }
 
-  // bind the data (logo and name of provider) from cridetor section to recharge component
+  // CRIDETOR SECTION : bind the data (logo and name of provider) from cridetor section to recharge component
 
   private selectedCreditorData = new BehaviorSubject<Creditor | null>(null);
   selectedCreditorData$ = this.selectedCreditorData.asObservable();

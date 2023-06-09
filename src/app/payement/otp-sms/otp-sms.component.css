@@ -8,6 +8,25 @@
     width:fit-content ;
     margin-top: 3rem;
   }
+
+/* ADD LOADING ICON AND MAKE IT ROTATE */
+  fa-icon {
+    color: #6415FF;
+    font-size: 5rem;
+    animation: spin-animation 1.5s infinite;
+    animation-timing-function: linear;
+    display: inline-block;
+}
+
+@keyframes spin-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
   
   .otp-sms h3 {
     color: #6415FF;

@@ -76,16 +76,17 @@ getJsonData() {
     localStorage.setItem('rechargeData', JSON.stringify(data));
   }
 
+  // when we click Vlidate button
   sendVerificationCode(): void {
     const accountId = 1; // Replace with the actual account ID
 
-    console.log('it works');
+    console.log('sendVerificationCod it works');
 
     // Make the API call to send the verification code
     this.http.get<number>(`http://192.168.0.55:8084/fim/est3Dgate/sendVerificationCode/${accountId}`)
       .subscribe(
         response => {
-          console.log(response); // Log the response (verification code message)
+          console.log('response: ',response); // Log the response (verification code message)
         },
         error => {
           console.error('Error occurred while sending the verification code:', error);

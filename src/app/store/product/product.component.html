@@ -1,0 +1,63 @@
+<div class="container mt-3 pt-3">
+    <div *ngIf="selectedProduct" class="container col-12 col-sm-10 col-md-11 m-auto shadow rounded-4">
+      <h2 class="title">
+        <div>
+            <button class="btn btn-secondary" (click)="goBack()">Back</button>
+        </div>
+        <div>
+            {{ selectedProduct.itemName }} 
+        </div>
+        
+      </h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img [src]="selectedProduct.image" alt="Product Image" class="image img-fluid">
+        </div>
+        <div class="col-md-6">
+          <p><strong>Price:</strong> {{ selectedProduct.price }}</p>
+          <p><strong>Quantity:</strong> {{ selectedProduct.quantity }}</p>
+          <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
+          <button class="btn btn-primary" (click)="buyNow()">Buy Now</button>
+
+        </div>
+
+        
+        <div class="container mt-3 pt-3">      
+            <div *ngIf="showBuyForm" class="container col-12 col-sm-10 col-md-11 m-auto shadow rounded-4">
+              <!-- Buy form -->
+              <h3 id="form">Please fill the form</h3>
+              <form (submit)="submitForm()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="phone" required>
+                </div>
+                <div class="mb-3">
+                  <label for="address" class="form-label">Address</label>
+                  <textarea class="form-control" id="address" name="address" [(ngModel)]="address" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="quantity" class="form-label">Quantity</label>
+                  <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="quantity" required>
+                </div>
+              
+                <div class="buttons">
+                    <button class="btn btn-secondary" (click)="showBuyForm = false">Cancel</button>
+                    <button type="submit" class="btn validate btn-primary">Validate</button>
+                </div>
+                
+              </form>
+              
+
+            </div>
+
+          </div>  
+              <!--  -->
+      </div>
+      
+    </div>
+  </div>
+  

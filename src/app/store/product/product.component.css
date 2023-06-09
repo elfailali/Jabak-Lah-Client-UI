@@ -1,0 +1,50 @@
+img{
+    max-height: 400px;
+    min-width: auto;
+    width:max-content;
+    border-radius: 10px;
+    /* border: 1px solid #646464; */
+}
+
+h2{
+    color: #6415FF;
+    font-weight: bold;
+    padding: 1rem ;
+    margin: 1rem;
+    border-bottom: #6415FF 1px solid;
+}
+
+form{
+    margin-bottom: 1rem;
+}
+button{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    border: none;
+
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items:center;
+    border: none;
+}
+.validate{
+    background-color: #6415FF;
+}
+
+/* previous */
+.round {
+    border-radius: 50%;
+  }
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+
+  .title{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
