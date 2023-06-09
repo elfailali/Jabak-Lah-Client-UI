@@ -54,6 +54,7 @@ export class DetailsClientComponent implements OnInit {
   updatePaymentLimit(): void {
     this.activatedRoute.paramMap.subscribe((param)=>{
       this.id =param.get('id');
+      console.log(this.id);
     });
     if(this.id){                  
       this.bankService.updatePaymentLimit(this.id, this.selectedPaymentLimit)

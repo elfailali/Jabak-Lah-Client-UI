@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  PATH_OF_API = 'http://192.168.0.104:8084/api/v1/auth/authenticate';
+  PATH_OF_API = 'http://localhost:8084/api/v1/auth/authenticate';
 
 
   requestHeader = new HttpHeaders({ 'No-Auth': 'True' });

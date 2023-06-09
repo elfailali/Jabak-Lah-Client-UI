@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit{
     private cookieService: CookieService
   ) {}
 
-  navigateToChangePassword(token: string) {
-    this.router.navigate(['/change-password'], { queryParams: { token } });
-  }
+  // navigateToChangePassword(token: string) {
+  //   this.router.navigate(['/change-password'], { queryParams: { token } });
+  // }
 
   ngOnInit(): void {}
 
@@ -41,11 +41,11 @@ export class LoginComponent implements OnInit{
 
 
         
-        if (decodedToken.role === 'CLIENT' && decodedToken.isFirstLogin === true) {
+        if (decodedToken.role === 'CLIENT' && decodedToken.isFirstLogin === false) {
           this.router.navigate(['/change-password']);
           
 
-        } else if (decodedToken.role === 'CLIENT' && decodedToken.isFirstLogin === false) {
+        } else if (decodedToken.role === 'CLIENT' && decodedToken.isFirstLogin === true) {
           this.router.navigate(['/home']);
         } else {
           this.router.navigate(['/login']);

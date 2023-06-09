@@ -36,13 +36,13 @@
                             <option value="3">Hssab 1 - Plafond : 20 000 DH</option>
                         </select> -->
                         <form>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                               <label for="clientId">Client ID:</label>
                               <input type="text" class="form-control" id="id" [(ngModel)]="id">
-                            </div>
+                            </div> -->
                           
-                            <div class="form-group">
-                              <label for="paymentLimit">Select account payment limit:</label>
+                            <div class="form-group my-4">
+                              <label class=" my-2" for="paymentLimit">Select account payment limit:</label>
                               <select class="form-select" aria-label="Default select example" id="paymentLimit" [(ngModel)]="selectedPaymentLimit">
                                 <option selected>Select account payment limit</option>
                                 <option value="200">Hssab 1 - Plafond : 200 DH</option>
@@ -66,7 +66,7 @@
                     <div class=" p-4" style="background-color:#f8f8f8;border-radius: 12px;">
                         <dl class="row">
                             <dt class="col-sm-4 Lato" style="color:#6415FF;">CIN</dt>
-                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.Cin}}</dd>
+                            <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>{{client.cin}}</dd>
 
                             <dt class="col-sm-4 Lato" style="color:#6415FF;">Birthday</dt>
                             <dd class="col-sm-8 Lato"><span style="color:#6415FF;">:   </span>21/06/1997</dd>

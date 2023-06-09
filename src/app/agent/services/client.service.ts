@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ClientService {
 
-  private serverUrl : string = `http://192.168.0.104:8084/api/v1/client` ;
+  private serverUrl : string = `http://localhost:8084/api/v1/client` ;
   private authorization = this.cookieService.get('Authorization');
 
   constructor(private httpClient :HttpClient, private cookieService : CookieService){}
