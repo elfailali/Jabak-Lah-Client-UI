@@ -6,4 +6,6 @@ export interface IClient {
     email : string;
     phoneNumber : string;
     cin : string;
+    birthDate : Date;
+    
 }

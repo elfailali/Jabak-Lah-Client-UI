@@ -33,8 +33,8 @@ export class ListClientComponent {
   public getAllClientFromServer(){
     this.loading=true;
     this.clientService.getAllClients().subscribe((data) => {
-      this.clients = data;
       console.log(data)
+      this.clients = data;
       this.loading=false;
     }, (error) => {
       this.errorMessage = error;

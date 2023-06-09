@@ -29,27 +29,12 @@
                                          
                                              </div>
  
-                                             <!-- <div class="row g-2 mb-4">
-                                                 <div class="form-floating col-md-6 ">
-                                                     <select placeholder="" class="form-select" aria-label="Default select example" required="true"
-                                                         style="border-radius:20px; background-color:#F8F8F8;">
-                                                         <option value="cin">Cin</option>
-                                                         <option value="Passport">Passport</option> 
-                                                     </select>
-                                                     <label class='Montserrat' style="color:#242846">Piece d'identité *</label>
-                                                 </div> 
- 
-                                                 <div class="form-floating col-md-6">
-                                                 <input  type='text' class='form-control' 
-                                                 placeholder="N° pièce d'identité" style="border-radius:20px; background-color:#F8F8F8;" required="true"/>
-                                                 <label class='Montserrat' style="color:#242846">N° pièce d'identité *</label>
-                                                 </div>
-                                             </div> -->
+                                            
  
                                              <div class="row g-2 mb-4">
 
                                                 <div class="form-floating col-md-6">
-                                                    <input type='date' class='form-control' 
+                                                    <input type='date' class='form-control'  [(ngModel)]="client.birthDate" name="birthDate" 
                                                     placeholder='Date de naissance' style="border-radius:20px; background-color:#F8F8F8;"/>
                                                     <label class='Montserrat' style="color:#242846">Date de naissance *</label>
                                                     </div>
@@ -77,11 +62,7 @@
                                              <div class=" row g-2 mb-4 ">
                                                  
                          
-                                                 <!-- <div class="form-floating col-md-6">
-                                                 <input  type='email' class='form-control' 
-                                                 placeholder='Confirmation Email' style="border-radius:20px; background-color:#F8F8F8;" required="true"/>
-                                                 <label class='Montserrat' style="color:#242846">Confirmation Email</label>
-                                                 </div>                                       -->
+                                               
 
                                                  <div class="form-floating col-md-12">
                                                     <input  type='text' [(ngModel)]="client.address" name="address" [value]="client.address" class='form-control' 
@@ -90,54 +71,14 @@
                                                     </div>
                                          
                                              </div>
-<!--  
-                                             <div class=" row g-2 mb-4 ">
-                         
-                                                 <div class="form-floating col-md-4">
-                                                 <input  type='text' [(ngModel)]="client.patentNumber" name="patentNumber" [value]="client.patentNumber"  class='form-control' 
-                                                 placeholder='N° de patente' style="border-radius:20px; background-color:#F8F8F8;" required="true"/>
-                                                 <label class='Montserrat' style="color:#242846">Patent Number *</label>
-                                                 </div>
-
-                                             </div> -->
+\
  
                                              
                              </div>
                          </div>
                         
                         
-                         <!-- <p class="card-title text-left MontserratM" style="color:#6415FF">Pièces jointes  </p>  
-                         <hr style="color:#6415FF"/> -->
-
-                         <!-- <div class=" row g-2 mb-4 ">
- 
-                            <div class="form-floating col-md-5">
-                                <input type='text' class='form-control' 
-                                placeholder='Description' style="border-radius:20px; background-color:#F8F8F8;" required="true"/>
-                                <label class='Montserrat' style="color:#242846">Description *</label>
-                            </div>
-
-                            <div class="col-md-7 p-0">
-                                <div class="input-group mb-3 px-2 py-2  " style="border-radius:20px; background-color:#F8F8F8; height: 58px;border :1px solid  #CBC8D0">
-                                    <input  id="upload" type="file" accept="image/*" class="form-control "  />
-                                    <label id="upload-label" htmlFor="upload" class="font-weight-light ">Choose file  <i class="fa fa-cloud-upload mr-2 text-muted"></i></label>
-
-                                    <div class="input-group-append " >
-                                        <label htmlFor="upload" class="btn btn-light m-0 rounded-pill px-4" style="background-color:#6415FF; color: #fff;"> 
-                                       
-                                        <small class="text-uppercase font-weight-bold ">Ajouter la piéce</small>
-                                        </label>
-                                    </div>
-                                </div>
-          
-          
-                                
-          
-                            </div>
-    
-                            
-
-                        </div> -->
+                     
  
                          <button  class="btn btn-block py-2 container-fluid " type="submit"
                          style="background-color:#242846; color:#fff; border-radius:20px; cursor:pointer" >
